@@ -1,0 +1,12 @@
+{
+  "version": "1.0.0",
+  "defaultFile": "contracts/Function.sol",
+  "environment": "solidity",
+  "setupCommands": ["npm i", "npx hardhat compile"],
+  "compileCommand": "npx hardhat compile",
+  "tests": [
+    { "itShould": "Compile", "command": "sh learn_tests/48.sh" },
+    { "itShould": "Call destructingAssignments", "command": "sh learn_tests/49.sh" }
+  ],
+  "learnerAccessibleFileList": ["contracts/*"]
+}
