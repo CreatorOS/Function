@@ -62,7 +62,8 @@ contract Function {
         // Values can be left out.
         (uint x, , uint y) = (4, 5, 6);
 
-        return (i, b, j, x, y);
+        // write logic to return multiple values i, b, j, x, y
+        
     }
 
     // Cannot use map for neither input nor output
