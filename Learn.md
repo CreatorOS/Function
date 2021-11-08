@@ -4,14 +4,13 @@ There are several ways to return outputs from a function.
 
 Public functions cannot accept certain data types as inputs or outputs
 
+## Returning many values from a function
+
 Unlike other languages, solidity supports returning multiple return values from a function.
 
-```
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.3;
+Let's write a function that returns three values.
 
-contract Function {
-    // Functions can return multiple values.
+```
     function returnMany()
         public
         pure
@@ -23,8 +22,13 @@ contract Function {
     {
         return (1, true, 2);
     }
+```
 
-    // Return values can be named.
+## Returning named values from a function
+
+We can even name return values.
+
+```
     function named()
         public
         pure
@@ -36,9 +40,14 @@ contract Function {
     {
         return (1, true, 2);
     }
+```
 
-    // Return values can be assigned to their name.
-    // In this case the return statement can be omitted.
+## Getting return values without return statement
+
+- Return values can be assigned to their name.
+- In this case the return statement can be omitted.
+
+```
     function assigned()
         public
         pure
@@ -52,9 +61,15 @@ contract Function {
         b = true;
         y = 2;
     }
+```
 
-    // Use destructing assignment when calling another
-    // function that returns multiple values.
+## Destructuring return values
+
+Use destructing assignment when calling another function that returns multiple values.
+
+Code this function:
+
+```
     function destructingAssigments()
         public
         pure
@@ -73,17 +88,26 @@ contract Function {
 
         return (i, b, j, x, y);
     }
+```
 
-    // Cannot use map for neither input nor output
+Hit `Run` to test if destructing assignment worked or not.
 
-    // Can use array for input
+## Limitations of functions
+
+- We cannot use map for neither input nor output
+
+- But we can use array for input like this:
+
+```
     function arrayInput(uint[] memory _arr) public {}
+```
 
-    // Can use array for output
-    uint[] public arr;
+- We can use array for output as well like this:
 
-    function arrayOutput() public view returns (uint[] memory) {
-        return arr;
-    }
+```
+uint[] public arr;
+
+function arrayOutput() public view returns (uint[] memory) {
+    return arr;
 }
 ```
