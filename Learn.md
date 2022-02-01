@@ -90,7 +90,7 @@ Code this function:
     }
 ```
 
-Hit `Run` to test if destructing assignment worked or not.
+Call the function above to test if destructing assignment worked or not.
 
 ## Limitations of functions
 
